@@ -62,12 +62,13 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-blue-700"
+          className=" text-blue-700"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
             <X
-              className={`h-6 w-6 text-blue-700'
+              className={`h-6 w-6 ${
+                isScrolled ? "text-blue-700" : "text-white"
               }`}
             />
           ) : (
