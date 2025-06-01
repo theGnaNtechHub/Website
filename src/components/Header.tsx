@@ -67,8 +67,7 @@ const Header: React.FC = () => {
         >
           {isMenuOpen ? (
             <X
-              className={`h-6 w-6 ${
-                isScrolled ? "text-blue-700" : "text-white"
+              className={`h-6 w-6 text-blue-700'
               }`}
             />
           ) : (
