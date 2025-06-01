@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           <img
             src="/logo.png"
             alt="theGnaN Tech Hub Logo"
-            className="h-20 md:h-25 w-auto"
+            className="w-[200px] h-[65px] sm:w-[250px] sm:h-[80px] md:w-[300px] md:h-[100px] lg:w-[350px] lg:h-[115px]"
           />
         </div>
 
