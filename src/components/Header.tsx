@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           <img
             src="/logo.png"
             alt="theGnaN Tech Hub Logo"
-            className="h-14 md:h-20"
+            className="h-16 md:h-22"
           />
         </div>
 
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               className={`font-medium text-sm transition-colors ${
                 isScrolled
                   ? "text-gray-700 hover:text-blue-700"
-                  : "text-white hover:text-orange-300"
+                  : "text-black hover:text-orange-300"
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
