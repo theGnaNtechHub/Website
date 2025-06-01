@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,48 +14,46 @@ const Header: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
 
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-6'
-      }`}
-    >
+    <header className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-3">
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
-          <img 
-            src="/logo.png" 
-            alt="theGnaN Tech Hub Logo" 
-            className="h-12 md:h-16"
+          <img
+            src="/logo.png"
+            alt="theGnaN Tech Hub Logo"
+            className="h-14 md:h-20"
           />
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
-          {['vision', 'approach', 'projects', 'programs'].map((section) => (
+          {["vision", "approach", "projects", "programs"].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
               className={`font-medium text-sm transition-colors ${
-                isScrolled ? 'text-gray-700 hover:text-blue-700' : 'text-white hover:text-orange-300'
+                isScrolled
+                  ? "text-gray-700 hover:text-blue-700"
+                  : "text-white hover:text-orange-300"
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>
           ))}
-          <button 
-            onClick={() => scrollToSection('join')}
+          <button
+            onClick={() => scrollToSection("join")}
             className="flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
           >
             Get Started <ChevronRight className="h-4 w-4 ml-1" />
@@ -63,14 +61,22 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-blue-700"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
-            <X className={`h-6 w-6 ${isScrolled ? 'text-blue-700' : 'text-white'}`} />
+            <X
+              className={`h-6 w-6 ${
+                isScrolled ? "text-blue-700" : "text-white"
+              }`}
+            />
           ) : (
-            <Menu className={`h-6 w-6 ${isScrolled ? 'text-blue-700' : 'text-white'}`} />
+            <Menu
+              className={`h-6 w-6 ${
+                isScrolled ? "text-blue-700" : "text-white"
+              }`}
+            />
           )}
         </button>
       </div>
@@ -79,7 +85,7 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 py-4">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            {['vision', 'approach', 'projects', 'programs'].map((section) => (
+            {["vision", "approach", "projects", "programs"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -88,8 +94,8 @@ const Header: React.FC = () => {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
-            <button 
-              onClick={() => scrollToSection('join')}
+            <button
+              onClick={() => scrollToSection("join")}
               className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-4 rounded-md transition-colors"
             >
               Get Started <ChevronRight className="h-4 w-4 ml-1" />
