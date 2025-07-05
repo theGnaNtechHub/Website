@@ -11,8 +11,9 @@ const JoinSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const telegramBotToken = '7830212949:AAEjOkE4UPCfvyvlvBlD5qm_pGgoTFrsQlU';
-    const chatId = '@contactinfofromweb'; // Updated to use channel username
+    const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
     
     const message = `
 New Contact Form Submission:
